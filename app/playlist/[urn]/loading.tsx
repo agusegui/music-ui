@@ -1,36 +1,51 @@
 export default function PlaylistLoading() {
   return (
-    <div className="mx-auto max-w-screen-lg px-4 py-8 sm:px-6 lg:px-8">
-      {/* Back link skeleton */}
-      <div className="mb-6 h-5 w-16 animate-pulse rounded bg-surface-raised" />
-
-      {/* Header skeleton */}
-      <header className="mb-8 flex flex-col gap-6 sm:flex-row sm:items-end">
-        <div className="size-[200px] shrink-0 animate-pulse rounded-lg bg-surface-raised" />
-        <div className="min-w-0 flex-1">
-          <div className="h-3 w-16 animate-pulse rounded bg-surface-raised" />
-          <div className="mt-3 h-9 w-48 animate-pulse rounded bg-surface-raised" />
-          <div className="mt-3 h-4 w-32 animate-pulse rounded bg-surface-raised" />
+    <main className="min-h-screen bg-surface">
+      {/* Top Bar skeleton */}
+      <div className="flex w-full items-center">
+        <div className="flex shrink-0 items-center gap-1 px-16 py-8">
+          <div className="h-5 w-16 animate-pulse rounded bg-surface-raised" />
         </div>
-      </header>
-
-      {/* Track list skeleton */}
-      <div className="flex flex-col gap-1">
-        {Array.from({ length: 8 }, (_, i) => (
-          <div
-            key={i}
-            className="flex items-center gap-3 rounded-md px-3 py-2"
-          >
-            <div className="h-4 w-8 animate-pulse rounded bg-surface-raised" />
-            <div className="size-10 animate-pulse rounded-md bg-surface-raised" />
-            <div className="min-w-0 flex-1">
-              <div className="h-4 w-36 animate-pulse rounded bg-surface-raised" />
-              <div className="mt-1 h-3 w-24 animate-pulse rounded bg-surface-raised" />
-            </div>
-            <div className="h-4 w-10 animate-pulse rounded bg-surface-raised" />
-          </div>
-        ))}
+        <div className="flex flex-1 items-center justify-center px-16 py-8">
+          <div className="h-11 w-full max-w-[480px] animate-pulse rounded-full bg-surface-raised" />
+        </div>
       </div>
-    </div>
+
+      {/* Content Area skeleton */}
+      <div className="flex gap-8 px-16">
+        {/* Left Column — Cover Art */}
+        <div className="flex w-[482px] shrink-0 items-center justify-center">
+          <div className="size-[250px] animate-pulse rounded-lg bg-surface-raised" />
+        </div>
+
+        {/* Right Column */}
+        <div className="flex flex-1 flex-col gap-3">
+          {/* Header Info skeleton */}
+          <div>
+            <div className="h-3 w-16 animate-pulse rounded bg-surface-raised" />
+            <div className="mt-3 h-9 w-64 animate-pulse rounded bg-surface-raised" />
+            <div className="mt-3 h-4 w-40 animate-pulse rounded bg-surface-raised" />
+          </div>
+
+          {/* Track list skeleton */}
+          <div className="flex flex-col gap-1">
+            {Array.from({ length: 6 }, (_, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-3 rounded-md px-3 py-2"
+              >
+                <div className="h-4 w-8 animate-pulse rounded bg-surface-raised" />
+                <div className="size-10 animate-pulse rounded-md bg-surface-raised" />
+                <div className="min-w-0 flex-1">
+                  <div className="h-4 w-36 animate-pulse rounded bg-surface-raised" />
+                  <div className="mt-1 h-3 w-24 animate-pulse rounded bg-surface-raised" />
+                </div>
+                <div className="h-4 w-10 animate-pulse rounded bg-surface-raised" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

@@ -24,8 +24,8 @@
 @media (prefers-color-scheme: dark) {
   :root {
     color-scheme: dark;
-    --surface: #09090b;
-    --surface-raised: #18181b;
+    --surface: #111111;
+    --surface-raised: #222222;
     --on-surface: #fafafa;
     --on-surface-muted: #a1a1aa;
     --border: #27272a;

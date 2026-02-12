@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Music } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { MusicNote01Icon } from "@hugeicons/core-free-icons";
 
 interface CoverArtProps {
   src: string | null;
@@ -18,7 +19,7 @@ export function CoverArt({ src, alt, size, className }: CoverArtProps) {
         role="img"
         aria-label={alt}
       >
-        <Music size={size * 0.4} />
+        <HugeiconsIcon icon={MusicNote01Icon} size={size * 0.4} />
       </div>
     );
   }

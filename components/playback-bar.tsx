@@ -1,14 +1,15 @@
 "use client";
 
+import { HugeiconsIcon } from "@hugeicons/react";
 import {
-  Play,
-  Pause,
-  SkipBack,
-  SkipForward,
-  Shuffle,
-  Repeat,
-  Repeat1,
-} from "lucide-react";
+  PlayIcon,
+  PauseIcon,
+  PreviousIcon,
+  NextIcon,
+  ShuffleIcon,
+  RepeatIcon,
+  RepeatOne01Icon,
+} from "@hugeicons/core-free-icons";
 import { usePlayback } from "@/hooks/use-playback";
 import { useMediaSession } from "@/hooks/use-media-session";
 import { IconButton } from "@/components/icon-button";
@@ -81,14 +82,14 @@ export function PlaybackBar() {
               onClick={toggleShuffle}
               className={isShuffled ? "!text-accent" : ""}
             >
-              <Shuffle size={16} />
+              <HugeiconsIcon icon={ShuffleIcon} size={16} />
             </IconButton>
             <IconButton
               aria-label="Previous track"
               size="sm"
               onClick={previousTrack}
             >
-              <SkipBack size={16} />
+              <HugeiconsIcon icon={PreviousIcon} size={16} />
             </IconButton>
             <IconButton
               aria-label={isPlaying ? "Pause" : "Play"}
@@ -96,14 +97,14 @@ export function PlaybackBar() {
               onClick={togglePlayPause}
               className="!text-on-surface"
             >
-              {isPlaying ? <Pause size={22} /> : <Play size={22} />}
+              {isPlaying ? <HugeiconsIcon icon={PauseIcon} size={22} /> : <HugeiconsIcon icon={PlayIcon} size={22} />}
             </IconButton>
             <IconButton
               aria-label="Next track"
               size="sm"
               onClick={nextTrack}
             >
-              <SkipForward size={16} />
+              <HugeiconsIcon icon={NextIcon} size={16} />
             </IconButton>
             <IconButton
               aria-label={`Repeat ${repeatMode}`}
@@ -112,9 +113,9 @@ export function PlaybackBar() {
               className={repeatMode !== "off" ? "!text-accent" : ""}
             >
               {repeatMode === "one" ? (
-                <Repeat1 size={16} />
+                <HugeiconsIcon icon={RepeatOne01Icon} size={16} />
               ) : (
-                <Repeat size={16} />
+                <HugeiconsIcon icon={RepeatIcon} size={16} />
               )}
             </IconButton>
           </div>

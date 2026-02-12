@@ -1,7 +1,8 @@
 "use client";
 
 import { Slider } from "@base-ui/react/slider";
-import { Volume2, VolumeX } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { VolumeHighIcon, VolumeOffIcon } from "@hugeicons/core-free-icons";
 import { usePlayback } from "@/hooks/use-playback";
 import { IconButton } from "@/components/icon-button";
 
@@ -16,9 +17,9 @@ export function VolumeSlider() {
         onClick={toggleMute}
       >
         {isMuted || volume === 0 ? (
-          <VolumeX size={16} />
+          <HugeiconsIcon icon={VolumeOffIcon} size={16} />
         ) : (
-          <Volume2 size={16} />
+          <HugeiconsIcon icon={VolumeHighIcon} size={16} />
         )}
       </IconButton>
       <Slider.Root

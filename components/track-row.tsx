@@ -1,6 +1,7 @@
 "use client";
 
-import { Play, Pause } from "lucide-react";
+import { HugeiconsIcon } from "@hugeicons/react";
+import { PlayIcon, PauseIcon } from "@hugeicons/core-free-icons";
 import type { SCTrack, SCPlaylist } from "@/types/soundcloud";
 import { usePlayback } from "@/hooks/use-playback";
 import { CoverArt } from "@/components/cover-art";
@@ -49,21 +50,17 @@ export function TrackRow({ track, index, playlist }: TrackRowProps) {
         className="flex w-8 shrink-0 items-center justify-center"
       >
         {isCurrentlyPlaying ? (
-          <Pause
-            size={14}
-            className="text-accent"
-            aria-label="Playing"
-          />
+          <span className="text-accent" aria-label="Playing">
+            <HugeiconsIcon icon={PauseIcon} size={14} color="currentColor" />
+          </span>
         ) : (
           <>
             <span className="block text-sm tabular-nums text-on-surface-muted group-hover:hidden">
               {index + 1}
             </span>
-            <Play
-              size={14}
-              className="hidden text-on-surface group-hover:block"
-              aria-hidden
-            />
+            <span className="hidden text-on-surface group-hover:block" aria-hidden>
+              <HugeiconsIcon icon={PlayIcon} size={14} color="currentColor" />
+            </span>
           </>
         )}
       </div>
