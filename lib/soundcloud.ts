@@ -166,13 +166,23 @@ export async function getPlaylistByUrn(
   }
 }
 
+let _allPlaylistsCache: { data: SCPlaylist[]; ts: number } | null = null;
+const ALL_PLAYLISTS_TTL = 60 * 60 * 1000; // 1 hour
+
 export async function getAllPlaylists(): Promise<SCPlaylist[]> {
+  if (_allPlaylistsCache && Date.now() - _allPlaylistsCache.ts < ALL_PLAYLISTS_TTL) {
+    return _allPlaylistsCache.data;
+  }
+
   const results = await Promise.allSettled(
     PLAYLIST_URLS.map(resolvePlaylistUrl),
   );
-  return results
+  const playlists = results
     .filter(
       (r): r is PromiseFulfilledResult<SCPlaylist> => r.status === "fulfilled",
     )
     .map((r) => r.value);
+
+  _allPlaylistsCache = { data: playlists, ts: Date.now() };
+  return playlists;
 }
